@@ -1,5 +1,5 @@
 const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin'); 
 
 module.exports = {
   entry: './src/index.js',
@@ -15,13 +15,13 @@ module.exports = {
     title: '今天天气不错',
     filename: 'index.html',
     template:"src/assets/index.html"
-  })],
+  }), ],
   module: {
     rules: [
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
-      },
+      } 
     ],
   },
 };
