@@ -1,22 +1,17 @@
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const base = require('./webpack.config.base')
 
 module.exports = {
-  entry: './src/index.js',
-  mode:"development",//"production",
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+   
+  mode:"production",//"production",
+   
   devServer: {
     contentBase: './dist',
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: '今天天气不错',
-    filename: 'index.html',
-    template:"src/assets/index.html"
-  }),
+  plugins: [ 
+    ...base.plugins,
   new MiniCssExtractPlugin({
     // Options similar to the same options in webpackOptions.output
     // both options are optional
